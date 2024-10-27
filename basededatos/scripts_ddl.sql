@@ -1,4 +1,4 @@
-TTable usuario {
+Table usuario {
 id usuario [pk]
 nombre varchar (100)
 email varchar (100)
