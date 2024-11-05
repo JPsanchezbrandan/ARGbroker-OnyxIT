@@ -1,41 +1,46 @@
+-- CORRECCION:
+-- Mejorar constraints
+
+
+
 Table usuario {
-id usuario [pk]
-nombre varchar (100)
-email varchar (100)
-apellido varchar(100)
-cuit text
-contraseña text 
-saldo decimal (10,2)
+id_usuario INT PRIMARY KEY,
+nombre VARCHAR(100) NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,  
+apellido VARCHAR(100) NOT NULL,
+cuit TEXT UNIQUE,                   
+contraseña TEXT NOT NULL,
+saldo DECIMAL(10,2)
 }
 
 Table broker {
-id cuenta [pk]
-saldo_inicial decimal(10,2)
-fecha_creacion datetime
+id_cuenta INT PRIMARY KEY,  
+saldo_inicial DECIMAL(10,2) NOT NULL
+fecha_creacion DATETIME NOT NULL
 FOREIGN KEY (id_usuario) unique
-
 }
 
 Table accion {
-id accion [pk]
-nombre_de_empresa varchar(100)
-ultimo_operado datetime
-cantidad_compra_diaria int
-precio_compra_actual decimal(10,2)
-precio_venta_actual decimal(10,2)
-cantidad_venta_diaria int
-apertura decimal (10,2)
-minimo_diario decimal (10,2)
-maximo_diario decimal (10,2)
-ultimo_cierre decimal (10,2)
+id_accion INT PRIMARY KEY,  
+nombre_de_empresa VARCHAR(100) NOT NULL,
+ultimo_operado DATETIME,
+cantidad_compra_diaria INT NOT NULL DEFAULT 0,
+precio_compra_actual DECIMAL(10,2) NOT NULL,
+precio_venta_actual DECIMAL(10,2) NOT NULL,
+cantidad_venta_diaria INT NOT NULL DEFAULT 0,
+apertura DECIMAL(10,2) NOT NULL,
+minimo_diario DECIMAL(10,2) NOT NULL,
+maximo_diario DECIMAL(10,2) NOT NULL,
+ultimo_cierre DECIMAL(10,2) NOT NULL
 }
 
 Table cotizacion_historica {
-id cotizacion [pk]
-id_simbolo int
-fecha datetime
-precio decimal(10,2)
-cantidad int
+id_cotizacion INT PRIMARY KEY,
+id_simbolo INT NOT NULL,  
+fecha DATETIME NOT NULL,
+precio DECIMAL(10,2) NOT NULL,
+cantidad INT NOT NULL,
+id_accion INT,
 id_accion fk
 
 }
@@ -49,22 +54,22 @@ PRIMARY KEY (id_orden, tipo_de_orden)
 }
 
 Table transacciones {
-id transaccion [pk]
-fecha datetime
-tipo varchar(50)
-cantidad int
-comision decimal(10,2)
-monto_invertido decimal(10,2)
+id_transaccion INT PRIMARY KEY,
+fecha DATETIME NOT NULL,
+tipo VARCHAR(50) NOT NULL,
+cantidad INT NOT NULL,
+comision DECIMAL(10,2) NOT NULL,
+monto_invertido DECIMAL(10,2) NOT NULL,
 id_usuario fk
 id_tipo_de_orden fk
 id_cotizacionhistorica fk
 
 }
 Table portafolio {
-id portafolio [pk]
-cantidad_accion integer
-valor_comprometido integer
-ganancia_perdida decimal(10,2)
+id_portafolio INT PRIMARY KEY,
+cantidad_accion INT NOT NULL,
+valor_comprometido INT NOT NULL,
+ganancia_perdida DECIMAL(10,2) NOT NULL,
 id_usuario fk                  
 id_cuenta fk        
 id_accion fk       
@@ -73,9 +78,15 @@ id_transaccion fk
 }
 
 Ref: usuario.id - broker.id
-Ref: broker.id - portafolio.id
-Ref: portafolio.id < accion.id
-Ref: cotizacion_historica.id < accion.id
-Ref: accion.id - orden.tipo_de_orden
+Ref: usuario.id < accion.id
+Ref: usuario.id < transacciones.id
+Ref: broker.id < portafolio.id
+Ref: broker.id < accion.id
+Ref: broker.id < transacciones.id
+Ref: broker.id < orden.id
+Ref: accion.id > transacciones.id
+Ref: accion.id > portafolio.id
+Ref: cotizacion_historica.id > accion.id
+Ref: accion.id < orden.tipo_de_orden
 Ref: orden.id - transacciones.id
 Ref: portafolio.id < transacciones.id
