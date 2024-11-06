@@ -13,7 +13,7 @@ Registro e inicio de sesión de usuarios.
 Consulta de cotizaciones de acciones de empresas.
 Compra y venta de acciones al precio actual del mercado.
 Visualización del portafolio del usuario, con detalles de saldo, total invertido, acciones y rendimiento.
-Cálculo automático de comisiones en cada operación (1.5%).
+Cálculo automático de comisiones en cada operación (1%).
 Usos
 
 Regístrate proporcionando nombre, apellido, ID, correo electrónico y contraseña.
