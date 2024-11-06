@@ -1,3 +1,5 @@
+ARGBroker
+
 Descripción
 ARGBroker es una aplicación de consola diseñada para gestionar inversiones en el mercado de valores. Permite a los usuarios registrarse, iniciar sesión, revisar su portafolio de inversiones y realizar operaciones de compra y venta de manera intuitiva y eficiente. La aplicación busca ofrecer una experiencia clara y funcional, con un diseño modular, bajo acoplamiento y alta cohesión para facilitar su mantenimiento y expansión.
 
