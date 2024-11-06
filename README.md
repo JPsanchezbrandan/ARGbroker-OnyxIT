@@ -3,8 +3,6 @@ ARGBroker
 Descripción
 ARGBroker es una aplicación de consola diseñada para gestionar inversiones en el mercado de valores. Permite a los usuarios registrarse, iniciar sesión, revisar su portafolio de inversiones y realizar operaciones de compra y venta de manera intuitiva y eficiente. La aplicación busca ofrecer una experiencia clara y funcional, con un diseño modular, bajo acoplamiento y alta cohesión para facilitar su mantenimiento y expansión.
 
-Además, la arquitectura del sistema incluye una base de datos para registrar todas las transacciones y mantener un historial de cotizaciones, garantizando precisión y consistencia en los datos. La aplicación utiliza el patrón de diseño DAO (Data Access Object) para desacoplar la lógica de negocio del acceso a datos, mejorando la escalabilidad y mantenibilidad del proyecto.
-
 Contexto
 Este proyecto fue desarrollado como parte de un programa de formación en programación, integrando conocimientos de diseño de sistemas, bases de datos, programación orientada a objetos y principios de diseño simple. La aplicación fue realizada por un equipo de desarrolladores en respuesta a requisitos funcionales específicos para actuar como intermediario entre inversores y el mercado bursátil.
 
