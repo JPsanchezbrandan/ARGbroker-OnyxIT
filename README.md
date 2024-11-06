@@ -1,10 +1,58 @@
-# ARGbroker-OnyxIT
+Descripción
+ARGBroker es una aplicación de consola diseñada para gestionar inversiones en el mercado de valores. Permite a los usuarios registrarse, iniciar sesión, revisar su portafolio de inversiones y realizar operaciones de compra y venta de manera intuitiva y eficiente. La aplicación busca ofrecer una experiencia clara y funcional, con un diseño modular, bajo acoplamiento y alta cohesión para facilitar su mantenimiento y expansión.
 
-Para el proyecto "ARGBroker Demo", hemos desarrollado una aplicación que simula transacciones de compra y venta de acciones en el Mercado de Valores de Buenos Aires (MERVAL). El propósito es ayudar a la empresa ISPC Cba, que actúa como broker, a facilitar estas operaciones entre inversores.
+Además, la arquitectura del sistema incluye una base de datos para registrar todas las transacciones y mantener un historial de cotizaciones, garantizando precisión y consistencia en los datos. La aplicación utiliza el patrón de diseño DAO (Data Access Object) para desacoplar la lógica de negocio del acceso a datos, mejorando la escalabilidad y mantenibilidad del proyecto.
 
-En este trabajo, los usuarios podrán registrarse, consultar cotizaciones de acciones, y realizar operaciones de compra y venta con un saldo inicial. La aplicación también muestra un resumen del portafolio de inversiones. Todo esto se implementará en español y en pesos argentinos.
+Contexto
+Este proyecto fue desarrollado como parte de un programa de formación en programación, integrando conocimientos de diseño de sistemas, bases de datos, programación orientada a objetos y principios de diseño simple. La aplicación fue realizada por un equipo de desarrolladores en respuesta a requisitos funcionales específicos para actuar como intermediario entre inversores y el mercado bursátil.
 
-Nos distribuimos tareas y roles para facilitar el trabajo en equipo, ayudándonos mutuamente con cualquier problema que surgió. Todos mostramos compromiso por aprender y contribuir al éxito del proyecto. Brenda fué la Scrum Master y se encargó de hacer la conexión a base de datos, además de corregir pequeños errores y poner en funcionamiento el código de la base de datos, Juan Ignacio y Juan Pablo se enfocaron en la programación, mientras que Federico y Daniel se encargaron de la parte de pases de datos. Hoy finalizamos la entrega del proyecto, a la espera de su corrección y posterior defensa oral.
+Alcance
+La primera versión del proyecto es una demo que simula operaciones de compra y venta de acciones. Las funcionalidades clave incluyen:
 
-- Se implementó código Python para realizar la parte de programación.
-- Se utilizó MySQL para realizar la parte de Base de Datos y OneCompiler para su posterior ejecución universal
+Registro e inicio de sesión de usuarios.
+Consulta de cotizaciones de acciones de empresas.
+Compra y venta de acciones al precio actual del mercado.
+Visualización del portafolio del usuario, con detalles de saldo, total invertido, acciones y rendimiento.
+Cálculo automático de comisiones en cada operación (1.5%).
+Usos
+
+Regístrate proporcionando nombre, apellido, ID, correo electrónico y contraseña.
+Inicia sesión en la aplicación.
+Accede al panel de cotizaciones para ver las acciones disponibles y sus precios.
+Realiza operaciones de compra y venta desde el panel de operaciones.
+Consulta tu portafolio personal para visualizar tu saldo y el rendimiento de tus inversiones.
+Nomenclatura
+
+Archivos y Directorios
+
+Archivos Python: snake_case en minúsculas. Ejemplo: main.py, inversor.py.
+Directorios: Nombres en minúsculas sin espacios ni caracteres especiales. Ejemplo: docs, src.
+Clases
+
+Nombres de clases, ejemplo: Inversor
+Métodos y Funciones
+
+Nombres de métodos y funciones en snake_case, comenzando con un verbo en infinitivo. Ejemplo: mostrar_menu
+Variables
+
+Nombres de variables en snake_case. Ejemplo: simbolo, cantidad
+Constantes
+
+Nombres de constantes en MAYÚSCULAS_CON_GUIONES. Ejemplo: 'COMPRA', 'VENTA', 'PENDIENTE'
+Base de Datos
+La base de datos está diseñada para registrar todas las transacciones de compra y venta, así como mantener un registro histórico de las cotizaciones.
+
+Entidades Principales
+
+Usuarios
+Acciones
+Transacciones
+Portafolio
+
+Autores
+
+Juan Gioda
+Juan Pablo Sánchez Brandán
+Brenda Torres
+Daniel Paez
+Federico Vélez
